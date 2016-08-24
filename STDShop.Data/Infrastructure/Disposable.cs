@@ -1,5 +1,5 @@
 ﻿using System;
-namespace STDShop.Data.Infrastucture
+namespace STDShop.Data.Infrastructure
 {
     public class Disposable : IDisposable
     {

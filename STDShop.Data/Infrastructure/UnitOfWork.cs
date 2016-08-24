@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace STDShop.Data.Infrastucture
+namespace STDShop.Data.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
