@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -36,3 +37,5 @@ namespace STDShop.Model.Models
     }
 }
 >>>>>>> origin/develop
+=======
+>>>>>>> 62cf8444182f350bd14cd94d25ceed0f579a88b9
