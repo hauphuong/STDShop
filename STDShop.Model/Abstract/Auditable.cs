@@ -8,96 +8,40 @@ namespace STDShop.Model.Abstract
         [MaxLength(256)]
         public string CreatedBy
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set; get;
         }
 
         public DateTime? CreatedDate
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set; get;
         }
 
         [MaxLength(256)]
         public string MetaDescription
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set; get;
         }
 
         [MaxLength(256)]
         public string MetaKeyword
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set; get;
         }
 
         public bool Status
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set; get;
         }
 
         [MaxLength(256)]
         public string UpdateBy
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set; get;
         }
 
         public DateTime? UpdatedDate
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set; get;
         }
     }
 }
