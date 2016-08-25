@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using STDShop.Data.Infrastructure;
+﻿using STDShop.Data.Infrastructure;
 using STDShop.Model.Models;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace STDShop.Data.Repositories
