@@ -242,7 +242,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\" />
+    <Folder Include="Assets\admin\" />
+    <Folder Include="Assets\client\" />
     <Folder Include="Infrastructure\Extensions\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
