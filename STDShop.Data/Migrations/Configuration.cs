@@ -31,7 +31,7 @@ namespace STDShop.Data.Migrations
                 FullName = "Luong Hau"
             };
 
-            manager.Create(user, "fsd123!@#");
+            manager.Create(user, "fsd123$");
             //if role not exists
             if (!roleManager.Roles.Any())
             {
