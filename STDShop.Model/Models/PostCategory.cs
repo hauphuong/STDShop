@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using STDShop.Model.Abstract;
@@ -33,5 +34,6 @@ namespace STDShop.Model.Models
         public bool? HomeFlag { set; get; }
 
         public virtual IEnumerable<Post> Posts { set; get; }
+
     }
 }
