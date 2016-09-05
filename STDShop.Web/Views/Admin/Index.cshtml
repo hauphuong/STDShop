@@ -13,9 +13,17 @@
     <script src="~/Scripts/spa/app.js"></script>
 </head>
 <body>
-    <div ng-controller="myController"> 
-        10 + 20 = {{10+20}}
+    <div ng-controller="schoolController">
+        <div ng-controller="studentController">
+            10 + 20 = {{10+20}}
+            {{message}}
+        </div>
+        <div ng-controller="teacherController">
+            10 + 20 = {{10+20}}
+            {{message}}
+        </div>
         {{message}}
     </div>
+    
 </body>
 </html>
