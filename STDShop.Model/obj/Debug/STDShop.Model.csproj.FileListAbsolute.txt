@@ -1,0 +1,12 @@
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\STDShop.Model.dll.config
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\STDShop.Model.dll
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\STDShop.Model.pdb
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\EntityFramework.dll
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\EntityFramework.SqlServer.dll
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\EntityFramework.xml
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\EntityFramework.SqlServer.xml
+Z:\MVC5\Project\STDShop\STDShop.Model\obj\Debug\STDShop.Model.csprojResolveAssemblyReference.cache
+Z:\MVC5\Project\STDShop\STDShop.Model\obj\Debug\STDShop.Model.dll
+Z:\MVC5\Project\STDShop\STDShop.Model\obj\Debug\STDShop.Model.pdb
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\STDProject.Common.dll
+Z:\MVC5\Project\STDShop\STDShop.Model\bin\Debug\STDProject.Common.pdb

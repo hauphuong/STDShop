@@ -1,0 +1,11 @@
+Z:\MVC5\Project\STDShop\STDShop.Service\bin\Debug\STDShop.Service.dll
+Z:\MVC5\Project\STDShop\STDShop.Service\bin\Debug\STDShop.Service.pdb
+Z:\MVC5\Project\STDShop\STDShop.Service\obj\Debug\STDShop.Service.csprojResolveAssemblyReference.cache
+Z:\MVC5\Project\STDShop\STDShop.Service\obj\Debug\STDShop.Service.dll
+Z:\MVC5\Project\STDShop\STDShop.Service\obj\Debug\STDShop.Service.pdb
+Z:\MVC5\Project\STDShop\STDShop.Service\bin\Debug\STDProject.Common.dll
+Z:\MVC5\Project\STDShop\STDShop.Service\bin\Debug\STDShop.Data.dll
+Z:\MVC5\Project\STDShop\STDShop.Service\bin\Debug\STDShop.Model.dll
+Z:\MVC5\Project\STDShop\STDShop.Service\bin\Debug\STDProject.Common.pdb
+Z:\MVC5\Project\STDShop\STDShop.Service\bin\Debug\STDShop.Data.pdb
+Z:\MVC5\Project\STDShop\STDShop.Service\bin\Debug\STDShop.Model.pdb

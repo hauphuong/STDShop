@@ -1,0 +1,4 @@
+Z:\MVC5\Project\STDShop\STDProject.Common\bin\Debug\STDProject.Common.dll
+Z:\MVC5\Project\STDShop\STDProject.Common\bin\Debug\STDProject.Common.pdb
+Z:\MVC5\Project\STDShop\STDProject.Common\obj\Debug\STDProject.Common.dll
+Z:\MVC5\Project\STDShop\STDProject.Common\obj\Debug\STDProject.Common.pdb
