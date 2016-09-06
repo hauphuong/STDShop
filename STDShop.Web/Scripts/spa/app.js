@@ -2,15 +2,16 @@
 var myApp = angular.module('myModule', []);
 
 myApp.controller("schoolController", schoolController);
-myApp.service('Validator', Validator);
-schoolController.$inject = ['$scope', 'Validator'];
+myApp.directive("stdShopDirective", stdShopDirective);
+myApp.service('ValidatorService', ValidatorService);
+schoolController.$inject = ['$scope', 'ValidatorService'];
 function schoolController($scope, Validator) {
     $scope.checkNumber = function () {
         $scope.message = Validator.checkNumber(10);
     }
     $scope.num = 1;
 }
-function Validator($window) {
+function ValidatorService($window) {
     return {
         checkNumber:checkNumber
     }
@@ -20,5 +21,10 @@ function Validator($window) {
         } else {
             return 'this is odd';
         }
+    }
+}
+function stdShopDirective() {
+    return {
+        template: "<h1>this is my first custom directive</h1>"
     }
 }
