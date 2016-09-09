@@ -2,6 +2,7 @@
 using STDShop.Data.Repositories;
 using STDShop.Model.Models;
 using System.Collections.Generic;
+using System;
 
 namespace STDShop.Service
 {
@@ -14,6 +15,8 @@ namespace STDShop.Service
         ProductCategory Delete(int id);
 
         IEnumerable<ProductCategory> GetAll();
+
+        IEnumerable<ProductCategory> GetAll(string keyword);
 
         IEnumerable<ProductCategory> GetAllByParentId(int parentId);
 
@@ -45,6 +48,15 @@ namespace STDShop.Service
 
         public IEnumerable<ProductCategory> GetAll()
         {
+            return _productCategoryRepository.GetAll();
+        }
+
+        public IEnumerable<ProductCategory> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _productCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+            }
             return _productCategoryRepository.GetAll();
         }
 
