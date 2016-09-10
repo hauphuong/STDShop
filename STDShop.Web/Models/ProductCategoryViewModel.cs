@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace STDShop.Web.Models
 {
     public class ProductCategoryViewModel
     {
         public int ID { set; get; }
+        [Required]
         public string Name { set; get; }
 
+        [Required]
         public string Alias { set; get; }
         public string Description { set; get; }
 
@@ -31,7 +34,7 @@ namespace STDShop.Web.Models
         public string MetaKeyword { set; get; }
 
         public string MetaDescription { set; get; }
-
+        [Required]
         public bool Status { set; get; }
     }
 }
