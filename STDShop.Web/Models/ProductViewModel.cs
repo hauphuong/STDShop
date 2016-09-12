@@ -38,7 +38,7 @@ namespace STDShop.Web.Models
 
         public DateTime? UpdatedDate { set; get; }
 
-        public string UpdatedBy { set; get; }
+        public string UpdateBy { set; get; }
 
         public string MetaKeyword { set; get; }
 
