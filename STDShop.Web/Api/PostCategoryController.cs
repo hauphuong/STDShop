@@ -1,20 +1,21 @@
 ﻿using AutoMapper;
-using STDShop.Model.Models;
-using STDShop.Service;
-using STDShop.Web.Infrastructure.Core;
-using STDShop.Web.Infrastructure.Extensions;
-using STDShop.Web.Models;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using STDShop.Model.Models;
+using STDShop.Service;
+using STDShop.Web.Infrastructure.Core;
+using STDShop.Web.Models;
+using STDShop.Web.Infrastructure.Extensions;
 
 namespace STDShop.Web.Api
 {
     [RoutePrefix("api/postcategory")]
+    [Authorize]
     public class PostCategoryController : ApiControllerBase
     {
-        private IPostCategoryService _postCategoryService;
+        IPostCategoryService _postCategoryService;
 
         public PostCategoryController(IErrorService errorService, IPostCategoryService postCategoryService) :
             base(errorService)
@@ -28,7 +29,9 @@ namespace STDShop.Web.Api
             return CreateHttpResponse(request, () =>
             {
                 var listCategory = _postCategoryService.GetAll();
+
                 var listPostCategoryVm = Mapper.Map<List<PostCategoryViewModel>>(listCategory);
+
                 HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listPostCategoryVm);
 
                 return response;
@@ -54,6 +57,7 @@ namespace STDShop.Web.Api
                     _postCategoryService.Save();
 
                     response = request.CreateResponse(HttpStatusCode.Created, category);
+
                 }
                 return response;
             });

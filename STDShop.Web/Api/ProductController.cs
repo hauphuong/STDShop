@@ -1,9 +1,4 @@
 ﻿using AutoMapper;
-using STDShop.Model.Models;
-using STDShop.Service;
-using STDShop.Web.Infrastructure.Core;
-using STDShop.Web.Infrastructure.Extensions;
-using STDShop.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +6,19 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Script.Serialization;
+using STDShop.Model.Models;
+using STDShop.Service;
+using STDShop.Web.Infrastructure.Core;
+using STDShop.Web.Infrastructure.Extensions;
+using STDShop.Web.Models;
 
 namespace STDShop.Web.Api
 {
     [RoutePrefix("api/product")]
+    [Authorize]
     public class ProductController : ApiControllerBase
     {
         #region Initialize
-
         private IProductService _productService;
 
         public ProductController(IErrorService errorService, IProductService productService)
@@ -27,7 +27,7 @@ namespace STDShop.Web.Api
             this._productService = productService;
         }
 
-        #endregion Initialize
+        #endregion
 
         [Route("getallparents")]
         [HttpGet]
@@ -43,7 +43,6 @@ namespace STDShop.Web.Api
                 return response;
             });
         }
-
         [Route("getbyid/{id:int}")]
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)
@@ -86,6 +85,7 @@ namespace STDShop.Web.Api
             });
         }
 
+
         [Route("create")]
         [HttpPost]
         [AllowAnonymous]
@@ -103,6 +103,7 @@ namespace STDShop.Web.Api
                     var newProduct = new Product();
                     newProduct.UpdateProduct(productCategoryVm);
                     newProduct.CreatedDate = DateTime.Now;
+                    newProduct.CreatedBy = User.Identity.Name;
                     _productService.Add(newProduct);
                     _productService.Save();
 
@@ -132,7 +133,7 @@ namespace STDShop.Web.Api
 
                     dbProduct.UpdateProduct(productVm);
                     dbProduct.UpdatedDate = DateTime.Now;
-
+                    dbProduct.UpdateBy = User.Identity.Name;
                     _productService.Update(dbProduct);
                     _productService.Save();
 
@@ -168,7 +169,6 @@ namespace STDShop.Web.Api
                 return response;
             });
         }
-
         [Route("deletemulti")]
         [HttpDelete]
         [AllowAnonymous]

@@ -1,20 +1,21 @@
 ﻿using AutoMapper;
-using STDShop.Model.Models;
-using STDShop.Service;
-using STDShop.Web.Infrastructure.Core;
-using STDShop.Web.Infrastructure.Extensions;
-using STDShop.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using STDShop.Model.Models;
+using STDShop.Service;
+using STDShop.Web.Infrastructure.Core;
+using STDShop.Web.Models;
+using STDShop.Web.Infrastructure.Extensions;
 using System.Web.Script.Serialization;
 
 namespace STDShop.Web.Api
 {
     [RoutePrefix("api/productcategory")]
+    [Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         #region Initialize
@@ -25,8 +26,23 @@ namespace STDShop.Web.Api
         {
             this._productCategoryService = productCategoryService;
         }
+
         #endregion
 
+        [Route("getallparents")]
+        [HttpGet]
+        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                var model = _productCategoryService.GetAll();
+
+                var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
         [Route("getbyid/{id:int}")]
         [HttpGet]
         public HttpResponseMessage GetById(HttpRequestMessage request, int id)
@@ -43,21 +59,6 @@ namespace STDShop.Web.Api
             });
         }
 
-        [Route("getallparents")]
-        [HttpGet]
-        public HttpResponseMessage GetAll(HttpRequestMessage request)
-        {
-            return CreateHttpResponse(request, () =>
-            {
-                var model = _productCategoryService.GetAll();
-
-                var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
-
-                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
-                return response;
-            });
-        }
-
         [Route("getall")]
         [HttpGet]
         public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageSize = 20)
@@ -66,9 +67,12 @@ namespace STDShop.Web.Api
             {
                 int totalRow = 0;
                 var model = _productCategoryService.GetAll(keyword);
+
                 totalRow = model.Count();
                 var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+
                 var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(query);
+
                 var paginationSet = new PaginationSet<ProductCategoryViewModel>()
                 {
                     Items = responseData,
@@ -80,6 +84,7 @@ namespace STDShop.Web.Api
                 return response;
             });
         }
+
 
         [Route("create")]
         [HttpPost]
@@ -138,6 +143,7 @@ namespace STDShop.Web.Api
                 return response;
             });
         }
+
         [Route("delete")]
         [HttpDelete]
         [AllowAnonymous]
