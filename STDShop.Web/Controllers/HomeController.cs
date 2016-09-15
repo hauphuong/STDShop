@@ -26,5 +26,25 @@ namespace STDShop.Web.Controllers
 
             return View();
         }
+
+        [ChildActionOnly] //ko được gọi trực tiếp home/footer mà chỉ để nhúng thôi
+        public ActionResult Header()
+        {
+            //nếu tên view khác tên method thì phải chỉ rõ ví dụ PartialView("Footer1")
+            return PartialView();
+        }
+        [ChildActionOnly] //ko được gọi trực tiếp home/footer mà chỉ để nhúng thôi
+        public ActionResult Category()
+        {
+            //nếu tên view khác tên method thì phải chỉ rõ ví dụ PartialView("Footer1")
+            return PartialView();
+        }
+
+        [ChildActionOnly] //ko được gọi trực tiếp home/footer mà chỉ để nhúng thôi
+        public ActionResult Footer()
+        {
+            //nếu tên view khác tên method thì phải chỉ rõ ví dụ PartialView("Footer1")
+            return PartialView();
+        }
     }
 }
