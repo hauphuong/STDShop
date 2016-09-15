@@ -1,13 +1,23 @@
-﻿using System;
+﻿using AutoMapper;
+using STDShop.Model.Models;
+using STDShop.Service;
+using STDShop.Web.Models;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace STDShop.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private IProductCategoryService _productCategoryService;
+        private ICommonService _commonService;
+
+        public HomeController(IProductCategoryService productCategoryService, ICommonService commonService)
+        {
+            _productCategoryService = productCategoryService;
+            _commonService = commonService;
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -27,24 +37,27 @@ namespace STDShop.Web.Controllers
             return View();
         }
 
-        [ChildActionOnly] //ko được gọi trực tiếp home/footer mà chỉ để nhúng thôi
+        [ChildActionOnly]
         public ActionResult Header()
         {
-            //nếu tên view khác tên method thì phải chỉ rõ ví dụ PartialView("Footer1")
             return PartialView();
         }
-        [ChildActionOnly] //ko được gọi trực tiếp home/footer mà chỉ để nhúng thôi
+
+        [ChildActionOnly]
         public ActionResult Category()
         {
-            //nếu tên view khác tên method thì phải chỉ rõ ví dụ PartialView("Footer1")
-            return PartialView();
+            var model = _productCategoryService.GetAll();
+            var listProductCategoryViewModel = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+            return PartialView(listProductCategoryViewModel);
         }
 
         [ChildActionOnly] //ko được gọi trực tiếp home/footer mà chỉ để nhúng thôi
         public ActionResult Footer()
         {
             //nếu tên view khác tên method thì phải chỉ rõ ví dụ PartialView("Footer1")
-            return PartialView();
+            var footerModel = _commonService.GetFooter();
+            var footerViewModel = Mapper.Map<Footer, FooterViewModel>(footerModel);
+            return PartialView(footerViewModel);
         }
     }
 }
