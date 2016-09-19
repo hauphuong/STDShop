@@ -1,6 +1,6 @@
 ﻿namespace STDShop.Data.Migrations
 {
-    using Common;
+    using STDShop.Common;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Model.Models;

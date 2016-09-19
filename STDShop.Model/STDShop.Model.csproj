@@ -85,12 +85,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\STDProject.Common\STDProject.Common.csproj">
-      <Project>{8a4c8aa5-7ac4-4e2b-91a8-c1c1e240cf15}</Project>
-      <Name>STDProject.Common</Name>
+    <ProjectReference Include="..\STDShop.Common\STDShop.Common.csproj">
+      <Project>{1b242c98-69b8-43d4-8387-718d5b51e4c6}</Project>
+      <Name>STDShop.Common</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

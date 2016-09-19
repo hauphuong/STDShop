@@ -49,9 +49,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\STDProject.Common\STDProject.Common.csproj">
-      <Project>{8a4c8aa5-7ac4-4e2b-91a8-c1c1e240cf15}</Project>
-      <Name>STDProject.Common</Name>
+    <ProjectReference Include="..\STDShop.Common\STDShop.Common.csproj">
+      <Project>{1b242c98-69b8-43d4-8387-718d5b51e4c6}</Project>
+      <Name>STDShop.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\STDShop.Data\STDShop.Data.csproj">
       <Project>{820af944-b840-43a6-bd94-7b15295559ce}</Project>
