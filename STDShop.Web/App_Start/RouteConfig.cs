@@ -38,7 +38,12 @@ namespace STDShop.Web
                 defaults: new { controller = "Product", action = "Detail", productId = UrlParameter.Optional },
                 namespaces: new string[] { "STDShop.Web.Controllers" }
             );
-
+            routes.MapRoute(
+             name: "TagList",
+             url: "tag/{tagId}.html",
+             defaults: new { controller = "Product", action = "ListByTag", tagId = UrlParameter.Optional },
+               namespaces: new string[] { "STDShop.Web.Controllers" }
+            );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
