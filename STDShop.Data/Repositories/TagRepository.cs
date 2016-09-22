@@ -1,4 +1,4 @@
-﻿ using STDShop.Data.Infrastructure;
+﻿using STDShop.Data.Infrastructure;
 using STDShop.Model.Models;
 
 namespace STDShop.Data.Repositories

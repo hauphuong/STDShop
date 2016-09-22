@@ -31,6 +31,8 @@ namespace STDShop.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
 
+        public DbSet<ContactDetail> ContactDetails { set; get; }
+
         public DbSet<Error> Errors { get; set; }
 
         public static STDShopDbContext Create()

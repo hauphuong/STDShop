@@ -20,6 +20,7 @@
             CreateProductCategorySample(context);
             CreateSlide(context);
             CreatePage(context);
+            CreateContactDetail(context);
         }
 
         private void CreateUser(STDShopDbContext context)
@@ -138,6 +139,42 @@
                         }
                     }
                 }
+            }
+        }
+        private void CreateContactDetail(STDShopDbContext context)
+        {
+            if (context.ContactDetails.Count() == 0)
+            {
+                try
+                {
+                    var contactDetail = new STDShop.Model.Models.ContactDetail()
+                    {
+                        Name = "Shop thời trang STD",
+                        Address = "47 Phan Sào Nam, Tân Bình, Tp.Hcm",
+                        Email = "luonghau91@gmail.com",
+                        Lat = 10.789247,
+                        Lng = 106.645786,
+                        Phone = "0966891583",
+                        Website = "http://std.com.vn",
+                        Other = "",
+                        Status = true
+
+                    };
+                    context.ContactDetails.Add(contactDetail);
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+                        }
+                    }
+                }
+
             }
         }
     }
