@@ -89,10 +89,19 @@
     <Compile Include="Migrations\201609221316320_AddContactDetailTable.Designer.cs">
       <DependentUpon>201609221316320_AddContactDetailTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609221502253_AddFeedbackTable.cs" />
+    <Compile Include="Migrations\201609221502253_AddFeedbackTable.Designer.cs">
+      <DependentUpon>201609221502253_AddFeedbackTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609221508049_AddFeedbackTable2.cs" />
+    <Compile Include="Migrations\201609221508049_AddFeedbackTable2.Designer.cs">
+      <DependentUpon>201609221508049_AddFeedbackTable2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ContactDetailRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
+    <Compile Include="Repositories\FeedbackRepository.cs" />
     <Compile Include="Repositories\FooterRepository.cs" />
     <Compile Include="Repositories\MenuGroupRepository.cs" />
     <Compile Include="Repositories\MenuRepository.cs" />
@@ -144,6 +153,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609221316320_AddContactDetailTable.resx">
       <DependentUpon>201609221316320_AddContactDetailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609221502253_AddFeedbackTable.resx">
+      <DependentUpon>201609221502253_AddFeedbackTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609221508049_AddFeedbackTable2.resx">
+      <DependentUpon>201609221508049_AddFeedbackTable2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
