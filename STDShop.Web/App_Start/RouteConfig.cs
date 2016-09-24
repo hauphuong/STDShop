@@ -36,15 +36,21 @@ namespace STDShop.Web
                namespaces: new string[] { "STDShop.Web.Controllers" }
             );
             routes.MapRoute(
-            name: "Cart",
-            url: "gio-hang.html",
-            defaults: new { controller = "ShoppingCart", action = "Index", id = UrlParameter.Optional },
-            namespaces: new string[] { "STDShop.Web.Controllers" }
+                name: "Cart",
+                url: "gio-hang.html",
+                defaults: new { controller = "ShoppingCart", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "STDShop.Web.Controllers" }
+            );
+            routes.MapRoute(
+                name: "Checkout",
+                url: "thanh-toan.html",
+                defaults: new { controller = "ShoppingCart", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "STDShop.Web.Controllers" }
             );
             routes.MapRoute(
                 name: "Page",
                 url: "trang/{alias}.html",
-                defaults: new { controller = "Page", action = "Index", alias = UrlParameter.Optional },
+                defaults: new { controller = "Page", action = "Checkout", alias = UrlParameter.Optional },
                 namespaces: new string[] { "STDShop.Web.Controllers" }
             );
             routes.MapRoute(
@@ -61,16 +67,16 @@ namespace STDShop.Web
                 namespaces: new string[] { "STDShop.Web.Controllers" }
             );
             routes.MapRoute(
-             name: "TagList",
-             url: "tag/{tagId}.html",
-             defaults: new { controller = "Product", action = "ListByTag", tagId = UrlParameter.Optional },
-               namespaces: new string[] { "STDShop.Web.Controllers" }
+                name: "TagList",
+                url: "tag/{tagId}.html",
+                defaults: new { controller = "Product", action = "ListByTag", tagId = UrlParameter.Optional },
+                namespaces: new string[] { "STDShop.Web.Controllers" }
             );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                  namespaces: new string[] { "STDShop.Web.Controllers" }
+                namespaces: new string[] { "STDShop.Web.Controllers" }
             );
         }
     }
