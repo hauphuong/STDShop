@@ -3,7 +3,10 @@
 (function () {
     angular.module('stdshop',
         ['stdshop.products',
+         'stdshop.application_groups',
          'stdshop.product_categories',
+         'stdshop.application_roles',
+         'stdshop.application_users',
          'stdshop.common'])
         .config(config)
         .config(configAuthentication);

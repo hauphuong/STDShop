@@ -1,7 +1,10 @@
 ﻿namespace STDShop.Data.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using Model.Models;
     using STDShop.Common;
+    using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Data.Entity.Validation;
@@ -12,7 +15,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(STDShop.Data.STDShopDbContext context)
@@ -21,6 +24,7 @@
             CreateSlide(context);
             CreatePage(context);
             CreateContactDetail(context);
+            //CreateUser(context);
         }
 
         private void CreateUser(STDShopDbContext context)
