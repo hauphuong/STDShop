@@ -85,7 +85,6 @@ namespace STDShop.Web.Api
             });
         }
 
-
         [Route("create")]
         [HttpPost]
         [AllowAnonymous]
@@ -110,7 +109,6 @@ namespace STDShop.Web.Api
                     var responseData = Mapper.Map<Product, ProductViewModel>(newProduct);
                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
                 }
-
                 return response;
             });
         }
