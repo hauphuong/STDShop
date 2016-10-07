@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using STDShop.Common;
 using STDShop.Data.Infrastructure;
 using STDShop.Data.Repositories;
 using STDShop.Model.Models;
-using STDShop.Common;
+using System.Collections.Generic;
 using System.Linq;
-using System;
 
 namespace STDShop.Service
 {
@@ -140,9 +139,9 @@ namespace STDShop.Service
                     productTag.TagID = tagId;
                     _productTagRepository.Add(productTag);
                 }
-
             }
         }
+
         public IEnumerable<Product> GetLastest(int top)
         {
             return _productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(top);
@@ -151,7 +150,6 @@ namespace STDShop.Service
         public IEnumerable<Product> GetHotProduct(int top)
         {
             return _productRepository.GetMulti(x => x.Status && x.HotFlag == true).OrderByDescending(x => x.CreatedDate).Take(top);
-
         }
 
         public IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, string sort, out int totalRow)
@@ -163,12 +161,15 @@ namespace STDShop.Service
                 case "popular":
                     query = query.OrderByDescending(x => x.ViewCount);
                     break;
+
                 case "discount":
                     query = query.OrderByDescending(x => x.PromotionPrice.HasValue);
                     break;
+
                 case "price":
                     query = query.OrderBy(x => x.Price);
                     break;
+
                 default:
                     query = query.OrderByDescending(x => x.CreatedDate);
                     break;
@@ -178,6 +179,7 @@ namespace STDShop.Service
 
             return query.Skip((page - 1) * pageSize).Take(pageSize);
         }
+
         public IEnumerable<string> GetListProductByName(string name)
         {
             return _productRepository.GetMulti(x => x.Status && x.Name.Contains(name)).Select(y => y.Name);
@@ -192,12 +194,15 @@ namespace STDShop.Service
                 case "popular":
                     query = query.OrderByDescending(x => x.ViewCount);
                     break;
+
                 case "discount":
                     query = query.OrderByDescending(x => x.PromotionPrice.HasValue);
                     break;
+
                 case "price":
                     query = query.OrderBy(x => x.Price);
                     break;
+
                 default:
                     query = query.OrderByDescending(x => x.CreatedDate);
                     break;
@@ -213,6 +218,7 @@ namespace STDShop.Service
             var product = _productRepository.GetSingleById(id);
             return _productRepository.GetMulti(x => x.Status && x.ID != id && x.CategoryID == product.CategoryID).OrderByDescending(x => x.CreatedDate).Take(top);
         }
+
         public IEnumerable<Tag> GetListTagByProductId(int id)
         {
             return _productTagRepository.GetMulti(x => x.ProductID == id, new string[] { "Tag" }).Select(y => y.Tag);

@@ -1,8 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Xml.Linq;
-using STDShop.Model.Abstract;
+﻿using STDShop.Model.Abstract;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace STDShop.Model.Models
 {
@@ -27,8 +26,9 @@ namespace STDShop.Model.Models
         [MaxLength(256)]
         public string Image { set; get; }
 
-        [Column(TypeName ="xml")]
+        [Column(TypeName = "xml")]
         public string MoreImages { set; get; }
+
         public decimal Price { set; get; }
 
         public decimal? PromotionPrice { set; get; }
@@ -36,6 +36,7 @@ namespace STDShop.Model.Models
 
         [MaxLength(500)]
         public string Description { set; get; }
+
         public string Content { set; get; }
 
         public bool? HomeFlag { set; get; }
