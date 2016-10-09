@@ -63,7 +63,7 @@ namespace STDShop.Service
 
         public void Delete(string id)
         {
-           // _appRoleRepository.DeleteMulti(x => x.Id == id);
+            _appRoleRepository.DeleteMulti(x => x.Id == id);
         }
 
         public IEnumerable<ApplicationRole> GetAll()
@@ -83,8 +83,7 @@ namespace STDShop.Service
 
         public ApplicationRole GetDetail(string id)
         {
-            return new ApplicationRole();
-            //return _appRoleRepository.GetSingleByCondition(x => x.Id == id);
+            return _appRoleRepository.GetSingleByCondition(x => x.Id == id);
         }
 
         public void Save()
@@ -94,8 +93,8 @@ namespace STDShop.Service
 
         public void Update(ApplicationRole AppRole)
         {
-            //if (_appRoleRepository.CheckContains(x => x.Description == AppRole.Description && x.Id != AppRole.Id))
-            //    throw new NameDuplicatedException("Tên không được trùng");
+            if (_appRoleRepository.CheckContains(x => x.Description == AppRole.Description && x.Id != AppRole.Id))
+                throw new NameDuplicatedException("Tên không được trùng");
             _appRoleRepository.Update(AppRole);
         }
 

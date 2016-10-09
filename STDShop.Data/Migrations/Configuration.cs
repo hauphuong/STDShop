@@ -1,10 +1,7 @@
 ﻿namespace STDShop.Data.Migrations
 {
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using Model.Models;
     using STDShop.Common;
-    using System;
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Data.Entity.Validation;
@@ -145,6 +142,7 @@
                 }
             }
         }
+
         private void CreateContactDetail(STDShopDbContext context)
         {
             if (context.ContactDetails.Count() == 0)
@@ -162,7 +160,6 @@
                         Website = "http://std.com.vn",
                         Other = "",
                         Status = true
-
                     };
                     context.ContactDetails.Add(contactDetail);
                     context.SaveChanges();
@@ -178,7 +175,6 @@
                         }
                     }
                 }
-
             }
         }
     }
