@@ -77,6 +77,14 @@
     <Compile Include="Migrations\201609241717090_CreateUser.Designer.cs">
       <DependentUpon>201609241717090_CreateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610111612483_ChangeOrderDetail.cs" />
+    <Compile Include="Migrations\201610111612483_ChangeOrderDetail.Designer.cs">
+      <DependentUpon>201610111612483_ChangeOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610111733097_RevenuesStatisticSP.cs" />
+    <Compile Include="Migrations\201610111733097_RevenuesStatisticSP.Designer.cs">
+      <DependentUpon>201610111733097_RevenuesStatisticSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ApplicationGroupRepository.cs" />
@@ -128,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609241717090_CreateUser.resx">
       <DependentUpon>201609241717090_CreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610111612483_ChangeOrderDetail.resx">
+      <DependentUpon>201610111612483_ChangeOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610111733097_RevenuesStatisticSP.resx">
+      <DependentUpon>201610111733097_RevenuesStatisticSP.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,6 +7,7 @@
          'stdshop.product_categories',
          'stdshop.application_roles',
          'stdshop.application_users',
+         'stdshop.statistics',
          'stdshop.common'])
         .config(config)
         .config(configAuthentication);

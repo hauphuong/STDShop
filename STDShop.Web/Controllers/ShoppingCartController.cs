@@ -79,7 +79,7 @@ namespace STDShop.Web.Controllers
             {
                 var detail = new OrderDetail();
                 detail.ProductID = item.ProductId;
-                detail.Quantitty = item.Quantity;
+                detail.Quantity = item.Quantity;
                 orderDetails.Add(detail);
             }
 

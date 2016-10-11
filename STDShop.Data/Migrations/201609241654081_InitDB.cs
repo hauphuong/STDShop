@@ -199,7 +199,7 @@ namespace STDShop.Data.Migrations
                     {
                         OrderID = c.Int(nullable: false),
                         ProductID = c.Int(nullable: false),
-                        Quantitty = c.Int(nullable: false),
+                        Quantity = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.OrderID, t.ProductID })
                 .ForeignKey("dbo.Orders", t => t.OrderID, cascadeDelete: true)

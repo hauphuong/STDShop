@@ -70,7 +70,7 @@ namespace STDShop.Web.Api
                 totalRow = model.Count();
                 var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
 
-                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(query);
+                var responseData = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductViewModel>>(query.AsEnumerable());
 
                 var paginationSet = new PaginationSet<ProductViewModel>()
                 {
@@ -101,7 +101,7 @@ namespace STDShop.Web.Api
                     var newProduct = new Product();
                     newProduct.UpdateProduct(productVm);
                     newProduct.CreatedDate = DateTime.Now;
-                   // newProduct.CreatedBy = User.Identity.Name;
+					newProduct.CreatedBy = User.Identity.Name;
                     _productService.Add(newProduct);
                     _productService.Save();
 
