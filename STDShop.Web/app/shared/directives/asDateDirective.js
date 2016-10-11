@@ -17,6 +17,7 @@
                     return new Date(modelValue);
                 });
                 ctrl.$parsers.push(function (modelValue) {
+                    
                     return modelValue;
                 });
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace STDShop.Web.Models
 {
@@ -7,6 +8,7 @@ namespace STDShop.Web.Models
     {
         public string Id { set; get; }
         public string FullName { set; get; }
+
         public DateTime BirthDay { set; get; }
         public string Bio { set; get; }
         public string Email { set; get; }
