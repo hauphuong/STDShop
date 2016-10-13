@@ -7,12 +7,8 @@
     ViewBag.MetaKeyword = pageIndex == 1 ? category.MetaKeyword : category.MetaKeyword + " - Trang " + pageIndex;
     ViewBag.MetaDescription = pageIndex == 1 ? category.MetaDescription : category.MetaDescription + " - Trang " + pageIndex;
     Layout = "~/Views/Shared/Layouts.cshtml";
-
-
 }
 <div class="women-product">
-
-
     <div class="w_content">
         <div class="women">
             <a href="/@(category.Alias).pc-@(category.ID).html"><h4>@category.Name - <span>@Model.TotalCount sản phẩm</span> </h4></a>

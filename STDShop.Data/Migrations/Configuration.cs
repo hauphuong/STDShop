@@ -22,6 +22,36 @@
             CreatePage(context);
             CreateContactDetail(context);
             //CreateUser(context);
+
+            CreateConfigTitle(context);
+        }
+
+        private void CreateConfigTitle(STDShopDbContext context)
+        {
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeTitle"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeTitle",
+                    ValueString = "Trang chủ STDShop",
+                });
+            }
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeMetaKeyword"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeMetaKeyword",
+                    ValueString = "Trang chủ STDShop",
+                });
+            }
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeMetaDescription"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeMetaDescription",
+                    ValueString = "Trang chủ STDShop",
+                });
+            }
         }
 
         private void CreateUser(STDShopDbContext context)
