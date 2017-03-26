@@ -115,8 +115,6 @@ namespace STDShop.Web.App_Start
             }
         }
 
-
-
         private static UserManager<ApplicationUser> CreateManager(IdentityFactoryOptions<UserManager<ApplicationUser>> options, IOwinContext context)
         {
             var userStore = new UserStore<ApplicationUser>(context.Get<STDShopDbContext>());
@@ -124,6 +122,4 @@ namespace STDShop.Web.App_Start
             return owinManager;
         }
     }
-
-
 }

@@ -85,6 +85,14 @@
     <Compile Include="Migrations\201610111733097_RevenuesStatisticSP.Designer.cs">
       <DependentUpon>201610111733097_RevenuesStatisticSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703081507091_CreateNewAdminUser.cs" />
+    <Compile Include="Migrations\201703081507091_CreateNewAdminUser.Designer.cs">
+      <DependentUpon>201703081507091_CreateNewAdminUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703081508469_AdminUser.cs" />
+    <Compile Include="Migrations\201703081508469_AdminUser.Designer.cs">
+      <DependentUpon>201703081508469_AdminUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ApplicationGroupRepository.cs" />
@@ -142,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610111733097_RevenuesStatisticSP.resx">
       <DependentUpon>201610111733097_RevenuesStatisticSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703081507091_CreateNewAdminUser.resx">
+      <DependentUpon>201703081507091_CreateNewAdminUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703081508469_AdminUser.resx">
+      <DependentUpon>201703081508469_AdminUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
