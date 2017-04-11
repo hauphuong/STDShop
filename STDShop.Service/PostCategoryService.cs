@@ -15,6 +15,8 @@ namespace STDShop.Service
 
         IEnumerable<PostCategory> GetAll();
 
+        IEnumerable<PostCategory> GetAll(string keyword);
+
         IEnumerable<PostCategory> GetAllByParentId(int parentId);
 
         PostCategory GetById(int id);
@@ -48,6 +50,14 @@ namespace STDShop.Service
             return _postCategoryRepository.GetAll();
         }
 
+        public IEnumerable<PostCategory> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _postCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+            }
+            return _postCategoryRepository.GetAll();
+        }
         public IEnumerable<PostCategory> GetAllByParentId(int parentId)
         {
             return _postCategoryRepository.GetMulti(x => x.Status && x.ParentID == parentId);

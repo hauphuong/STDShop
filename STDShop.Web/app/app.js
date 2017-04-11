@@ -5,6 +5,7 @@
         ['stdshop.products',
          'stdshop.application_groups',
          'stdshop.product_categories',
+         'stdshop.post_categories',
          'stdshop.application_roles',
          'stdshop.application_users',
          'stdshop.statistics',
